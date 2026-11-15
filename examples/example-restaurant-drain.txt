@@ -1,0 +1,7 @@
+Restaurant building drain, NPS 4:
+
+$ python3 cleanout_checker.py --drain-nps 4
+
+Drain NPS 4: minimum cleanout NPS 3; maximum spacing 15 m (one-way rodding) / 30 m (two-way). [Table 7.4.7.2, OBC 2024]
+
+Note the trap for designers trained on the NPC: the national code wants a same-size (NPS 4) cleanout here; Ontario 2024 requires NPS 3.

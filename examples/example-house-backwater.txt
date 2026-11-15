@@ -1,0 +1,7 @@
+House with a basement bathroom below street level:
+
+$ python3 cleanout_checker.py --backwater --fixtures-below-street yes --single-dwelling yes
+
+Backwater valves - 7.4.6.4:
+ - A valve that obstructs free air circulation is NOT permitted on a building drain or sewer, except a normally-open type (CAN/CSA-B70/B181.1/B181.2/B182.1) on a building drain serving not more than one dwelling unit.
+ - Fixtures below the level of the adjoining street: install a backwater valve on each fixture drain - OR, for a house on a municipal sanitary sewer, one valve protecting all fixtures below the cover level of the upstream sanitary maintenance hole. Several fixtures on one floor may share a valve on their branch.
