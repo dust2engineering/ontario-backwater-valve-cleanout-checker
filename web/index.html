@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ontario Backwater Valve & Cleanout Checker | Dust 2 Engineering Inc.</title>
+<style>
+:root{color-scheme:dark}
+body{background:#0e1116;color:#e6e9ee;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;padding:24px;line-height:1.55}
+.wrap{max-width:860px;margin:0 auto}
+h1{font-size:1.55rem;line-height:1.25;margin:.2em 0 .1em}
+h2{font-size:1.15rem;margin-top:1.6em;color:#ffd479}
+.sub{color:#9fb0c3;margin:.2em 0 1.2em}
+.card{background:#161b22;border:1px solid #2b333f;border-radius:12px;padding:18px;margin:14px 0}
+label{display:block;margin:.7em 0 .25em;color:#c8d3e0;font-size:.95rem}
+input,select,textarea{width:100%;box-sizing:border-box;background:#0e1116;color:#e6e9ee;border:1px solid #39424f;border-radius:8px;padding:9px;font-size:1rem}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.row{grid-template-columns:1fr}}
+button{background:#f0a832;color:#14100a;border:0;border-radius:8px;padding:11px 18px;font-size:1rem;font-weight:600;cursor:pointer;margin-top:14px}
+pre{background:#0a0d11;border:1px solid #2b333f;border-radius:10px;padding:14px;white-space:pre-wrap;word-break:break-word;font-size:.92rem}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{border:1px solid #2b333f;padding:6px 8px;text-align:left}
+th{background:#1b212b}
+.small{color:#9fb0c3;font-size:.88rem}
+a{color:#7cc4ff}
+.pass{color:#7ee2a0}.fail{color:#ff9c9c}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Ontario Backwater Valve & Cleanout Checker</h1>
+<p class="sub">OBC 2024 — 7.4.6.4 backwater valves and 7.4.7 cleanouts, including the new Table 7.4.7.2.</p>
+<div class="card">
+<h2 style="margin-top:0">Cleanout size &amp; spacing (Table 7.4.7.2 — new in OBC 2024)</h2>
+<label>Drain / sewer size (NPS)</label>
+<select id="nps"><option value="2">2</option><option value="3">3</option><option value="4" selected>4</option><option value="5">5</option><option value="6">6</option><option value="8">8</option><option value="10">10</option><option value="12">12</option></select>
+<button onclick="calc()">Check cleanout</button>
+<pre id="out">Pick a pipe size and click Check.</pre></div>
+<div class="card"><h2>Backwater valves (7.4.6.4)</h2>
+<label>Are any fixtures below the level of the adjoining street (or below the upstream sanitary maintenance-hole cover)?</label>
+<select id="below"><option value="no" selected>No / not sure</option><option value="yes">Yes</option></select>
+<button onclick="bwv()">Check backwater valve rules</button>
+<pre id="out2">The 2024 Code deleted the old "gate valve" option — Sentence (3) now requires a backwater valve.</pre></div>
+<div class="card"><h2>Where cleanouts must go (7.4.7.1)</h2>
+<p class="small">Above every running trap (upstream side) · inside leader at its base or within 1 m upstream (2024 tightened this from 3 m) · building drain at the exit point, NPS 4 or larger · stacks at the base, within 3 m upstream, or on the Y fitting · immediately downstream of an interceptor · indirect waste for food equipment at every turn over 45° · kitchen sink trap arm, close downstream of the trap. Maintenance holes: spacing ≤ 90 m (sewer ≤ NPS 24) or ≤ 150 m (larger); building to first maintenance hole ≤ 75 m developed length (2024 raised this from 30 m).</p></div>
+<p class="small">Free tool by <b>Dust 2 Engineering Inc.</b>, Mississauga, Ontario — building permit
+drawings for restaurants and small commercial projects across the GTA, stamped by an Ontario P.Eng.
+Flat rate $3,500–$5,000. Questions or a project to discuss: open an issue in this repository.</p>
+</div>
+<script>
+function cleanout(n){ if(n<3) return ['same size as the drain',7.5,15]; if(n<=4) return ['NPS 3',15,30]; return ['NPS 4',26,52]; }
+function calc(){
+ const n=parseFloat(document.getElementById('nps').value);
+ const c=cleanout(n);
+ let out='Drain NPS '+n+': minimum cleanout '+c[0]+'; maximum spacing '+c[1]+' m (one-way rodding) / '+c[2]+' m (two-way). [Table 7.4.7.2]';
+ if(n>=8) out+='\nBuilding sewer NPS 8 or larger: the cleanout shall be a maintenance hole, at every junction and every change of slope, size or direction.';
+ document.getElementById('out').textContent=out;
+}
+function bwv(){
+ const below=document.getElementById('below').value==='yes';
+ let out='General rule: a backwater valve that obstructs free air circulation is NOT permitted on a building drain or sewer — except a normally-open type (CAN/CSA-B70 / B181.1 / B181.2 / B182.1) on a building drain serving not more than one dwelling unit. [7.4.6.4.(1)-(2)]';
+ out+= below? '\nFixtures below street level: a backwater valve on each fixture drain — OR, for a house on a municipal sanitary sewer, one valve protecting all fixtures below the upstream maintenance-hole cover level. Fixtures on one floor may share a valve on their branch. [7.4.6.4.(3)-(4)]'
+            : '\nNo below-grade fixtures reported: Sentence (3) protection is triggered wherever the drain or branch may be subject to backflow — confirm the flood level with the municipality.';
+ document.getElementById('out2').textContent=out;
+}
+</script>
+</body>
+</html>
