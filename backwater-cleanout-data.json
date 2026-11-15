@@ -1,0 +1,57 @@
+{
+ "code": "Ontario Building Code 2024 (O. Reg. 163/24), Part 7",
+ "backwater_valves_7_4_6_4": [
+  "(1) A backwater valve that would obstruct the free circulation of air shall not be installed on a building drain or building sewer, except as permitted by Sentence (2).",
+  "(2) A backwater valve may be installed on a building drain where it is of the normally open type, conforms to CAN/CSA-B70, B181.1, B181.2 or B182.1, and serves not more than one dwelling unit.",
+  "(3) Where a building drain or branch may be subject to backflow, either (a) a backwater valve shall be installed on the fixture drain of each fixture located below the level of the adjoining street, or (b) for a residential building served by a municipal sanitary sewer, a valve protecting fixtures located below the level of the cover of the upstream sanitary maintenance hole.",
+  "(4) Where several fixtures on the same floor are connected to the same branch, the valve may be installed on the branch instead of on each fixture drain.",
+  "(5) A subsoil drainage pipe discharging to a sanitary system subject to surcharge shall be connected so that sewage cannot back up into the pipe.",
+  "2024 change: the 2012 Code's 'gate valve or backwater valve' option in Sentence (3) is deleted - only a backwater valve; branch (3)(b) (maintenance-hole cover level) is new."
+ ],
+ "cleanout_locations_7_4_7_1": [
+  "Cleanouts for both sanitary and storm systems, positioned to clean the entire system.",
+  "On the upstream side, directly above, every running trap.",
+  "Inside leader: at the base, or not more than 1 m upstream of the base (2024 value - the old/NPC figure is 3 m).",
+  "Building sewer NPS 8 or larger: the cleanout shall be a maintenance hole.",
+  "Building sewer between the building and the municipal sewer, and between cleanouts: no change of direction or grade (exception: pipe NPS 6 or smaller may change direction up to 5 degrees per 3 m, or by fittings totalling up to 45 degrees).",
+  "Building drain: a cleanout of NPS 4 or larger as close as possible to where the drain exits the building.",
+  "Stacks: at the base, within 3 m upstream of the base, or on the Y fitting connecting to the building drain or branch.",
+  "Immediately downstream of an interceptor.",
+  "Indirect waste pipe serving food equipment: at every change of direction of more than 45 degrees.",
+  "Kitchen sink trap arm: a readily accessible cleanout as close as possible downstream of the trap."
+ ],
+ "table_7_4_7_2_cleanout_size_and_spacing": [
+  {
+   "drain_nps": "less than 3",
+   "cleanout_min_nps": "same as the drain",
+   "max_spacing_one_way_m": 7.5,
+   "max_spacing_two_way_m": 15
+  },
+  {
+   "drain_nps": "3 and 4",
+   "cleanout_min_nps": "3",
+   "max_spacing_one_way_m": 15,
+   "max_spacing_two_way_m": 30
+  },
+  {
+   "drain_nps": "more than 4",
+   "cleanout_min_nps": "4",
+   "max_spacing_one_way_m": 26,
+   "max_spacing_two_way_m": 52
+  }
+ ],
+ "cleanout_table_note": "Table 7.4.7.2 is NEW in the 2024 OBC. Do not use the National Plumbing Code version: the NPC requires a same-size cleanout for NPS 3-4 drains; Ontario 2024 requires NPS 3.",
+ "maintenance_holes_7_4_7_2": [
+  "Maintenance hole spacing: building sewer NPS 24 or smaller - not more than 90 m; larger than NPS 24 - not more than 150 m.",
+  "Developed length from the building to the first maintenance hole: not more than 75 m (2024 value - the 2012 Code said 30 m).",
+  "Sewer-to-sewer connection without a maintenance hole: developed length from the building to the connection not more than 30 m.",
+  "Sanitary building sewers NPS 8 and larger: maintenance holes at every junction and every change of slope, size or direction (storm sewers likewise).",
+  "One-way cleanouts must be arranged to clean in the direction of flow."
+ ],
+ "cleanout_access_7_4_7_4": [
+  "Cleanout openings shall be readily accessible, shall not be located in a floor assembly where it would constitute a hazard, and shall not serve as a floor drain.",
+  "Every change of direction between a cleanout and the pipe it serves shall use 45-degree elbows.",
+  "Cleanout for a stack serving a wall-hung urinal: above the flood level rim of the fixture.",
+  "In contamination-risk occupancies (medical, laboratory): cleanouts serving fixture drains at least 150 mm above the flood level rim."
+ ]
+}
